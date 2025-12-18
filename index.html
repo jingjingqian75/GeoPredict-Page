@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<style>
+  .container .hero-body .title.is-3 {
+    margin-top: 10px !important;
+  }
+  .container .hero-body .subtitle {
+    margin-bottom: 0 !important;
+  }
+</style>
+
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" integrity="sha384-R2lNHWtz1w8Q1b4Hp0SoQALQU35nOp2zP0WlO2hhVxpu4cr5Zg6H1V6YwD+f+Ch8" crossorigin="anonymous"></script>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="GeoPredict: Leveraging Predictive Kinematics and 3D Gaussian Geometry for Precise VLA Manipulation." />
+  <meta name="keywords" content="Visuomotor Learning, Vision-Language-Action Model, 3D Gaussian Splatting." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GeoPredict | Project Page</title>
+
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+
+  <link rel="stylesheet" href="static/css/bulma.min.css" />
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css" />
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="static/css/index.css" />
+  <link rel="stylesheet" href="https://unpkg.com/beerslider/dist/BeerSlider.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h2 class="title is-2 publication-title">
+              GeoPredict: Leveraging Predictive Kinematics<br> and 3D Gaussian Geometry<br> for Precise VLA Manipulation
+            </h2>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href="https://scholar.google.com/citations?user=sGDjHRUAAAAJ&hl=en">Jingjing Qian</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="https://github.com/h161020716">Boyao Han</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://scholar.google.com.hk/citations?user=o-K_AoYAAAAJ&hl=en">Chen Shi</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="https://github.com/NickShawn">Lei Xiao</a><sup>3</sup>,</span>
+              <span class="author-block">Long Yang<sup>1</sup>,</span>
+              <span class="author-block"><a href="https://shishaoshuai.com">Shaoshuai Shi</a><sup>4</sup>,</span>
+              <span class="author-block"><a href="https://llijiang.github.io">Li Jiang</a><sup>1†</sup></span>
+            </div>
+
+            <div style="margin: 0.5em;"></div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block is-size-5">
+                <span class="author-block"><sup>1</sup> The Chinese University of Hong Kong, Shenzhen</span><br>
+                <span class="author-block" style="margin-right: 0.5em;"><sup>2</sup> Hunan University</span>
+                <span class="author-block" style="margin-right: 0.5em;"><sup>3</sup> LiAuto Inc.</span>
+                <span class="author-block"><sup>4</sup> Voyager Research, Didi Chuxing</span><br>
+                <span class="author-block"><sup>†</sup> Corresponding Author</span><br>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- TODO: replace -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2410.11236" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://github.com/jingjingqian75/GeoPredict" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" crossorigin="anonymous"></script>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" style="text-align: center;">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>Vision-Language-Action (VLA) models achieve strong generalization in robotic manipulation but remain largely reactive and 2D-centric, making them unreliable in tasks that require precise 3D reasoning. We propose <b>GeoPredict</b>, a geometry-aware VLA framework that augments a continuous-action policy with predictive kinematic and geometric priors. GeoPredict introduces a trajectory-level module that encodes motion history and predicts multi-step 3D keypoint trajectories of robot arms, and a predictive 3D Gaussian geometry module that forecasts workspace geometry with track-guided refinement along future keypoint trajectories. These predictive modules serve exclusively as training-time supervision through depth-based rendering, while inference requires only lightweight additional query tokens without invoking any 3D decoding. Experiments on RoboCasa Human-50, LIBERO, and real-world manipulation tasks show that GeoPredict consistently outperforms strong VLA baselines, especially in geometry-intensive and spatially demanding scenarios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <div style="margin: 2em;"></div>
+
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3" style="text-align: center;">Method</h2>
+        <img src="static/images/Method.png"
+          class="interpolation-image"
+          alt="Overview of GeoPredict Architecture."/>
+        <div class="subtitle has-text-justified is-size-6" style="margin-top: 10px;">
+          <p><b>Overview of GeoPredict.</b> Given an instruction, multi-view images and motion history encoded by the Track Encoder, a central LLM Transformer learns two main tasks. First, it predicts multi-timestep 3D keypoint trajectories using learnable Future Track Query. Second, it forecasts future workspace geometry as a predictive 3D Gaussian by processing a 3D Spatial Query through a Voxel Decoder. A track-guided refinement mechanism leverages the predicted future tracks to allocate geometric capacity to task-relevant interaction regions. Our policy then generates the final action via an Action Expert. Crucially, these predictive modules serve exclusively as training-time supervision and are not invoked during inference, thus preserving efficiency.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3" style="text-align: center;">Main Results</h2>
+        
+        <div style="margin-top: 20px;">
+          <h4 class="title is-4" style="margin-bottom: 10px; text-align: center;">RoboCasa Simulation Benchmark Results</h4>
+          <img src="./static/images/Robocasa.png"
+            class="interpolation-image"
+            alt="RoboCasa Benchmark Results."
+            style="display: block; margin-left: auto; margin-right: auto;"/>
+          <div class="subtitle has-text-justified is-size-6" style="margin-top: 10px;">
+            <p><b>RoboCasa Simulation Benchmark Results.</b> Task success rates (%) across 24 sub-tasks and the Average Success Rate (%). <sup><b>*</b></sup>Denotes our fine-tuned experimental results. <b>Bold</b> indicates the best performing model. See Appendix in our paper for detailed sub-task definitions.</p>
+          </div>
+        </div>
+
+        <div style="margin: 2em;"></div>
+
+        <div>
+          <h4 class="title is-4" style="margin-bottom: 10px; text-align: center;">LIBERO Simulation Benchmark Results</h4>
+          <img src="./static/images/Libero.png"
+            class="interpolation-image"
+            alt="LIBERO Benchmark Results."
+            style="display: block; margin-left: auto; margin-right: auto;"/>
+          <div class="subtitle has-text-justified is-size-6" style="margin-top: 10px;">
+            <p><b>LIBERO Simulation Benchmark Results.</b> Task success rates (%) across 4 evaluation suites and the Average Success Rate (%). <sup><b>*</b></sup>Denotes our reproduced experimental results. <sup><b>&dagger;</b></sup>Denotes no available standard deviation data. <b>Bold</b> indicates the best performing model, and <u>underline</u> indicates the <b>runner-up</b> model.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3" style="text-align: center;">Qualitative Results</h2>
+        
+        <div style="width: 60%; margin-left: auto; margin-right: auto; margin-top: 20px;">
+          <img src="./static/images/Visualization.png"
+            class="interpolation-image"
+            alt="Qualitative Visualization."
+            style="width: 100%; display: block;"/>
+          <div class="subtitle has-text-justified is-size-6" style="margin-top: 10px;">
+            <p><b>Qualitative Comparisons of Future Depth Rendering.</b> Visualizations are shown for timesteps \(t+1\), \(t+10\), and \(t+20\). <span style="color: red;"><b>Red boxes</b></span> highlight the improvements in fine-grained geometric details. Best viewed zoomed in.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3" style="text-align: center;">Real-World Experiments</h2>
+        
+        <div style="margin-top: 20px;">
+          <h4 class="title is-4" style="margin-bottom: 10px; text-align: center;">Evaluation Suite</h4>
+          <img src="./static/images/Real_setting.png"
+            class="interpolation-image"
+            alt="Real-World Evaluation Suite."
+            style="display: block; margin-left: auto; margin-right: auto;"/>
+          <div class="subtitle has-text-justified is-size-6" style="margin-top: 10px;">
+            <p><b>Real-world Evaluation Suite.</b> We evaluate the model's capabilities across four settings: Spatial Generalization, Geometry Generalization, Visual Robustness, and Temporal Reasoning. For the first three settings, each column represents different trials of the same task. In the temporal setting (the fourth and fifth columns), the model must distinguish between opposite transport directions (Left-to-Right vs. Right-to-Left) where intermediate observations are visually indistinguishable, requiring the policy to leverage motion history.</p>
+          </div>
+        </div>
+
+        <div style="margin: 2em;"></div>
+
+        <div style="width: 60%; margin-left: auto; margin-right: auto;">
+          <h4 class="title is-4" style="margin-bottom: 10px; text-align: center;">Experiment Results</h4>
+          <img src="./static/images/Real_results.png"
+            class="interpolation-image"
+            alt="Real-World Experiment Results."
+            style="display: block; margin-left: auto; margin-right: auto;"/>
+          <div class="subtitle has-text-justified is-size-6" style="margin-top: 10px;">
+            <p><b>Real-world Experiment Results.</b> Task success rates (%) across four distinct settings: Spatial, Geometry, Robustness and Temporal.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer style="padding: 20px 0;">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="content has-text-centered" 
+                style="background-color: #f5f5f5; padding: 20px; border-radius: 10px; font-size: 14px;">
+            <p>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project
+                Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the template of this website, we
+              just ask that you should provide a link back to this page in the footer. <br/>
+              This website is licensed under a
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons
+                Attribution-ShareAlike 4.0 International
+                License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </section>
+</body>
+
+</html>
