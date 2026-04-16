@@ -2,6 +2,14 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+:root {
+  --publication-venue-blue: #0a67c7;
+  --publication-author-green: #7dbb00;
+  --publication-author-green-hover: #5f9300;
+  --publication-highlight-blue-bg: #eaf3ff;
+  --publication-highlight-blue-border: #b9d7ff;
+}
+
 
 .footer .icon-link {
     font-size: 25px;
@@ -55,6 +63,39 @@ body {
     font-family: 'Google Sans', sans-serif;
 }
 
+.publication-topline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 1.1rem;
+    font-family: 'Google Sans', sans-serif;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.publication-topline .venue-text {
+    color: var(--publication-venue-blue);
+    font-size: clamp(1.55rem, 3vw, 2.3rem);
+}
+
+.publication-topline .highlight-badge {
+    display: inline-flex;
+    align-items: center;
+    height: clamp(1.55rem, 3vw, 2.3rem);
+    padding: 0 0.95rem;
+    border-radius: 999px;
+    background: var(--publication-highlight-blue-bg);
+    border: 1px solid var(--publication-highlight-blue-border);
+    color: var(--publication-venue-blue);
+    font-size: clamp(1rem, 1.95vw, 1.45rem);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    box-shadow: 0 8px 20px rgba(10, 103, 199, 0.12);
+}
+
 .publication-venue {
     color: #555;
     width: fit-content;
@@ -70,11 +111,13 @@ body {
 .publication-authors {
 }
 
-.publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+.publication-author-list a,
+.publication-author-list .author-name-text {
+   color: var(--publication-author-green) !important;
 }
 
-.publication-authors a:hover {
+.publication-author-list a:hover {
+    color: var(--publication-author-green-hover) !important;
     text-decoration: underline;
 }
 
@@ -131,6 +174,18 @@ body {
 
 .eql-cntrb { 
   font-size: smaller;
+}
+
+@media screen and (max-width: 768px) {
+    .publication-topline {
+        gap: 0.5rem;
+        margin-top: 0.85rem;
+        margin-bottom: 0.95rem;
+    }
+
+    .publication-topline .highlight-badge {
+        padding: 0.32rem 0.8rem;
+    }
 }
 
 
